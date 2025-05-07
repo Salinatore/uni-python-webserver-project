@@ -175,3 +175,6 @@ cython_debug/
 
 #logs file
 log.txt
+
+#macOs
+.DS_Store
