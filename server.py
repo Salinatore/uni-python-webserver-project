@@ -2,14 +2,34 @@ import socket
 import os
 import mimetypes
 from datetime import datetime
+import logging
 
 HOST = '127.0.0.1'
 PORT = 8080
 WWW_DIR = 'www'
+LOG_FILE = 'log.txt'
+
+# --- Configure Logging ---
+logger = logging.getLogger('web_server')
+logger.setLevel(logging.INFO)
 
 def log_request(request_line, status_code):
     with open("log.txt", "a") as log:
         log.write(f"[{datetime.now()}] {request_line} -> {status_code}\n")
+fh = logging.FileHandler(LOG_FILE)
+fh.setLevel(logging.INFO)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+
+logger.addHandler(fh)
+logger.addHandler(ch)
+# --- End Logging Configuration ---
+
 
 def read_file_content(filepath):
     try:
