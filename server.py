@@ -4,8 +4,6 @@ import mimetypes
 import threading
 import logging
 
-from numpy.f2py.auxfuncs import throw_error
-
 HOST = '127.0.0.1'
 PORT = 8080
 WWW_DIR = 'www'
