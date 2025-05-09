@@ -35,7 +35,7 @@ def read_file_content(filepath):
         with open(filepath, 'rb') as f:
             return f.read()
     except (FileNotFoundError, IOError) as e:
-        print(f"Error reading file {filepath}: {e}")
+        logger.error(f"Error reading file {filepath}: {e}")
         return b""
 
 def send_response(client_socket, status_code, content, content_type):
