@@ -1,15 +1,16 @@
-# 🐍 Minimal Python Web Server
+# Web Server Minimo in Python
 
-**Project Title:** Building a Minimal Web Server in Python to Serve a Static Website  
-**University Project – Academic Year 2024/2025**
+Semplice server HTTP multithread sviluppato in Python per il corso di **Programmazione di Reti** (Università di Bologna). Serve contenuti statici su `localhost:8080` gestendo richieste `GET` e rispondendo con codici HTTP standard (`200`, `404`, ecc.).
 
-## 🎯 Goal
+## Contenuto
 
-Create a basic HTTP server in Python (using `socket`) to serve a static website made with HTML and CSS.
+- `server.py`: server TCP multithread
+- `www/`: HTML/CSS/immagini statiche
+- `log.txt`: log delle richieste
 
-## ✅ Implemented Features
+## Funzionalità
 
-- Server runs on **`localhost:8080`**
-- Serves **at least 3 static HTML pages** from the `www/` folder
-- Handles **GET requests** and responds with **HTTP 200**
-- Sends **HTTP 404** for missing files
+- Supporto MIME con `mimetypes`
+- Logging delle richieste
+- Layout responsive lato client
+- Codici supportati: `200`, `400`, `404`, `405`, `500`
