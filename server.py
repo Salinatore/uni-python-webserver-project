@@ -55,7 +55,7 @@ def send_response(client_socket, status_code, content, content_type):
         f"Content-Type: {content_type}\r\n"
         f"Content-Length: {len(content)}\r\n"
         "Connection: close\r\n\r\n"
-    ).encode() + content
+    ).encode('ascii') + content
     client_socket.sendall(response)
 
 
